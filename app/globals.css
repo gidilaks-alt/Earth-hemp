@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f3ede1;
+  color: #2c2a22;
+}
+
+::selection {
+  background-color: #707b4f;
+  color: #f3ede1;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.section-divider {
+  background: linear-gradient(to bottom, transparent, rgba(112, 123, 79, 0.15), transparent);
+}
