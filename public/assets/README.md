@@ -2,9 +2,14 @@
 
 יש לשים כאן את קבצי התמונה הבאים (הקוד כבר מצפה לשמות האלה):
 
-- `crossbody.jpg` — The Crossbody
-- `wallet.jpg` — The Wallet
-- `desert-edition.jpg` — Desert Edition
+- `crossbody.jpg` — The Crossbody ✅ תמונה אמיתית (חוף אילת)
+- `wallet.jpg` — The Wallet ⏳ עדיין פלייסהולדר
+- `desert-edition.jpg` — Desert Edition ⏳ עדיין פלייסהולדר — נשלחו תמונות בצ'אט
+  אך לא כקובץ מצורף, ולכן לא ניתן היה לשמור אותן כאן
+
+`crossbody-lifestyle-2.jpg` ו-`crossbody-lifestyle-3.jpg` הן תמונות נוספות
+מאותו סט (אותו בגד ים, אותו חוף) שלא נעשה בהן שימוש עדיין באתר — ניתן להשתמש
+בהן בעתיד לגלריה נוספת.
 
 אם ל-Higgsfield נוצרו גרסאות סטייליסטיות חדשות, ניתן להוסיף אותן לצד המקור,
 לדוגמה `crossbody-styled.jpg`, ולהחליף את הנתיב ב-`lib/products.ts`.
