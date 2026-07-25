@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Logo from './Logo';
 
 const links = [
   { id: 'hemp', label: 'מה זה המפ' },
@@ -26,8 +27,8 @@ export default function Nav() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#hero" className="font-serif text-lg tracking-widest text-ink">
-          EARTH &amp; HEMP
+        <a href="#hero">
+          <Logo variant="mark" />
         </a>
         <ul className="hidden gap-8 text-sm text-ink/80 md:flex">
           {links.map((link) => (
