@@ -3,7 +3,7 @@
 import { Suspense, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Environment, ContactShadows } from '@react-three/drei';
-import HempBagModel from './HempBagModel';
+import RealBagModel from './RealBagModel';
 import HempFibers from './HempFibers';
 import { useScrollProgress } from './useScrollProgress';
 
@@ -22,7 +22,7 @@ export default function Hero3D() {
         <directionalLight position={[3, 4, 2]} intensity={1.1} color="#fff4e0" />
         <directionalLight position={[-3, 1, -2]} intensity={0.35} color="#a9b48a" />
         <Suspense fallback={null}>
-          <HempBagModel scrollProgress={scrollProgress} />
+          <RealBagModel scrollProgress={scrollProgress} />
           <HempFibers />
           <ContactShadows position={[0, -1.15, 0]} opacity={0.35} scale={6} blur={2.4} far={2} />
           <Environment preset="dawn" />
