@@ -46,10 +46,10 @@ export function LeafMark({ size = 96 }: { size?: number }) {
 }
 
 export default function Logo({
-  variant = 'full',
+  variant = 'photo',
   className = '',
 }: {
-  variant?: 'full' | 'mark';
+  variant?: 'photo' | 'mark';
   className?: string;
 }) {
   if (variant === 'mark') {
@@ -64,12 +64,10 @@ export default function Logo({
   }
 
   return (
-    <div className={`flex flex-col items-center ${className}`}>
-      <LeafMark size={120} />
-      <h1 className="mt-2 font-serif text-5xl tracking-wide text-ink md:text-6xl">
-        Earth <span className="text-clay">&amp;</span> Hemp
-      </h1>
-      <p className="mt-2 text-sm tracking-[0.25em] text-olive-dark">Handcrafted · Organic</p>
-    </div>
+    <img
+      src="/assets/logo.jpg"
+      alt='לוגו EARTH & HEMP — סמל עלה המפ, "Handcrafted | Organic", "EST. 2026 | ISRAEL"'
+      className={className}
+    />
   );
 }

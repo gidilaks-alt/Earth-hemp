@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
-import { LeafMark } from './Logo';
+import Logo from './Logo';
 
 const Hero3D = dynamic(() => import('./Hero3D'), { ssr: false });
 
@@ -25,10 +25,7 @@ export default function HeroSection() {
           transition={{ duration: 0.9, delay: 0.15 }}
           className="flex flex-col items-center"
         >
-          <LeafMark size={110} />
-          <h1 className="mt-2 font-serif text-5xl tracking-wide text-ink md:text-7xl">
-            Earth <span className="text-clay">&amp;</span> Hemp
-          </h1>
+          <Logo variant="photo" className="w-56 md:w-72" />
         </motion.div>
         <motion.p
           initial={{ opacity: 0, y: 20 }}

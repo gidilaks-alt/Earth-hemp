@@ -1,5 +1,21 @@
+import Image from 'next/image';
 import ParallaxBackdrop from './ParallaxBackdrop';
 import Reveal3D from './Reveal3D';
+
+const workshopPhotos = [
+  {
+    src: '/assets/workshop-1.jpg',
+    alt: 'תופרת בסדנה בנפאל תופרת בד המפ ירוק במכונת תפירה תעשייתית',
+  },
+  {
+    src: '/assets/workshop-2.jpg',
+    alt: 'תופרת בסדנה בנפאל תופרת בד המפ ורוד, ערימות גלילי בד ברקע',
+  },
+  {
+    src: '/assets/workshop-3.jpg',
+    alt: 'תופר בסדנה בנפאל מודד ותופר בד המפ ירקרק במכונת תפירה',
+  },
+];
 
 const steps = [
   {
@@ -36,6 +52,16 @@ export default function ProcessSection() {
             </Reveal3D>
           ))}
         </div>
+        <Reveal3D delay={0.3} className="mt-14">
+          <p className="mb-6 text-center text-xs tracking-[0.3em] text-olive-dark">מהסדנה שלנו בנפאל</p>
+          <div className="grid gap-4 md:grid-cols-3">
+            {workshopPhotos.map((photo) => (
+              <div key={photo.src} className="relative aspect-square overflow-hidden rounded-2xl shadow-sm">
+                <Image src={photo.src} alt={photo.alt} fill sizes="(max-width: 768px) 90vw, 30vw" className="object-cover" />
+              </div>
+            ))}
+          </div>
+        </Reveal3D>
       </div>
     </section>
   );
