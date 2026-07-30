@@ -2,7 +2,6 @@
 
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
-import Logo from './Logo';
 
 const Hero3D = dynamic(() => import('./Hero3D'), { ssr: false });
 
@@ -19,14 +18,14 @@ export default function HeroSection() {
         >
           עבודת יד בנפאל
         </motion.p>
-        <motion.div
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.15 }}
-          className="flex flex-col items-center"
+          className="font-serif text-5xl tracking-wide text-ink md:text-7xl"
         >
-          <Logo variant="photo" className="w-56 md:w-72" />
-        </motion.div>
+          Earth <span className="text-clay">&amp;</span> Hemp
+        </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
