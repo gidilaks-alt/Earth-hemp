@@ -1,14 +1,19 @@
 'use client';
 
-import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
-
-const Hero3D = dynamic(() => import('./Hero3D'), { ssr: false });
 
 export default function HeroSection() {
   return (
     <section id="hero" className="relative flex min-h-screen items-center overflow-hidden bg-cream">
-      <Hero3D />
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        src="/assets/videos/desert-edition-3d.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+      <div className="absolute inset-0 bg-cream/55" />
       <div className="relative z-10 mx-auto max-w-6xl px-6 pt-24 text-center md:pt-0">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
