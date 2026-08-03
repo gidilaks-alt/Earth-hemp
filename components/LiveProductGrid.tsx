@@ -21,7 +21,7 @@ export default function LiveProductGrid({ initialProducts }: { initialProducts: 
   }, []);
 
   return (
-    <div className="mt-16 grid gap-8 md:grid-cols-3">
+    <div className="mt-16 grid gap-8 sm:grid-cols-2 md:grid-cols-3">
       {items.map((product, i) => (
         <Reveal3D key={product.id} delay={i * 0.1}>
           <ProductCard product={product} />

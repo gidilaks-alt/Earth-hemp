@@ -3,7 +3,7 @@ import Reveal3D from './Reveal3D';
 
 export default function AboutHempSection() {
   return (
-    <section id="hemp" className="relative overflow-hidden bg-cream py-28">
+    <section id="hemp" className="relative overflow-hidden bg-cream py-20 md:py-28">
       <ParallaxBackdrop />
       <div className="mx-auto max-w-4xl px-6 text-center">
         <Reveal3D>

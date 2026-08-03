@@ -2,7 +2,7 @@ import Reveal3D from './Reveal3D';
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="relative bg-olive-dark py-28 text-cream">
+    <section id="contact" className="relative bg-olive-dark py-20 text-cream md:py-28">
       <div className="mx-auto max-w-2xl px-6 text-center">
         <Reveal3D>
           <p className="mb-3 text-xs tracking-[0.3em] text-clay">נשמח לשמוע מכם</p>

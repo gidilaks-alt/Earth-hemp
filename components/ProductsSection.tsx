@@ -4,7 +4,7 @@ import Reveal3D from './Reveal3D';
 
 export default function ProductsSection() {
   return (
-    <section id="products" className="relative bg-cream py-28">
+    <section id="products" className="relative bg-cream py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal3D className="text-center">
           <p className="mb-3 text-xs tracking-[0.3em] text-olive-dark">הקולקציה</p>

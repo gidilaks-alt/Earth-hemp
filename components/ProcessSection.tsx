@@ -34,7 +34,7 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section id="process" className="relative overflow-hidden bg-sand/40 py-28">
+    <section id="process" className="relative overflow-hidden bg-sand/40 py-20 md:py-28">
       <ParallaxBackdrop />
       <div className="mx-auto max-w-5xl px-6">
         <Reveal3D className="text-center">
