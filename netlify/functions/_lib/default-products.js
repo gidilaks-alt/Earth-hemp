@@ -1,16 +1,6 @@
-export type Product = {
-  id: string;
-  name: string;
-  description: string;
-  material: string;
-  /** null = no photo uploaded yet — UI shows a placeholder. */
-  image: string | null;
-  alt: string;
-  /** ILS, whole shekels. PLACEHOLDER — replace with real prices before going live. */
-  price: number;
-};
-
-export const products: Product[] = [
+// Mirrors lib/products.ts. Used as the seed/fallback before any admin edits
+// exist in Blob storage. Keep in sync manually if you change lib/products.ts.
+module.exports = [
   {
     id: 'crossbody',
     name: 'The Crossbody',
@@ -57,7 +47,3 @@ export const products: Product[] = [
     price: 99,
   },
 ];
-
-export function getProduct(id: string): Product | undefined {
-  return products.find((p) => p.id === id);
-}

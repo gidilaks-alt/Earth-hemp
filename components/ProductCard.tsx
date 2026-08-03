@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import type { Product } from '@/lib/products';
+import ProductImagePlaceholder from './ProductImagePlaceholder';
 
 export default function ProductCard({ product }: { product: Product }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -35,13 +36,17 @@ export default function ProductCard({ product }: { product: Product }) {
         className="group rounded-2xl bg-cream/80 p-5 shadow-md ring-1 ring-olive-dark/10"
       >
         <div className="relative aspect-square overflow-hidden rounded-xl bg-sand/50">
-          <Image
-            src={product.image}
-            alt={product.alt}
-            fill
-            sizes="(max-width: 768px) 90vw, 30vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
+          {product.image ? (
+            <Image
+              src={product.image}
+              alt={product.alt}
+              fill
+              sizes="(max-width: 768px) 90vw, 30vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+          ) : (
+            <ProductImagePlaceholder />
+          )}
         </div>
         <h3 className="mt-5 font-serif text-2xl text-ink">{product.name}</h3>
         <p className="mt-2 text-sm leading-relaxed text-ink/70">{product.description}</p>

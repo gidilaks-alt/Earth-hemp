@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@netlify/blobs": "^8.1.0",
     "framer-motion": "^11.11.17",
     "next": "^14.2.15",
     "react": "^18.3.1",

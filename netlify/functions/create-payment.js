@@ -16,11 +16,18 @@
 //   PAYPLUS_ENV              - "sandbox" (default) or "production"
 //   SITE_URL                 - e.g. https://earthnhemp.netlify.app (no trailing slash)
 
-const PRODUCTS = {
-  crossbody: { name: 'The Crossbody', price: 149 },
-  wallet: { name: 'The Wallet', price: 89 },
-  'desert-edition': { name: 'Desert Edition', price: 169 },
-};
+const { getStore } = require('@netlify/blobs');
+const defaultProducts = require('./_lib/default-products');
+
+async function getCurrentProducts() {
+  try {
+    const store = getStore('earth-hemp-products');
+    const stored = await store.get('products.json', { type: 'json' });
+    return stored || defaultProducts;
+  } catch {
+    return defaultProducts;
+  }
+}
 
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
@@ -34,7 +41,8 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: JSON.stringify({ error: 'Invalid request body' }) };
   }
 
-  const product = PRODUCTS[productId];
+  const currentProducts = await getCurrentProducts();
+  const product = currentProducts.find((p) => p.id === productId);
   if (!product) {
     return { statusCode: 400, body: JSON.stringify({ error: 'Unknown product' }) };
   }
