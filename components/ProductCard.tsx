@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import type { Product } from '@/lib/products';
@@ -25,25 +26,30 @@ export default function ProductCard({ product }: { product: Product }) {
   };
 
   return (
-    <motion.div
-      ref={ref}
-      onMouseMove={onMouseMove}
-      onMouseLeave={onMouseLeave}
-      style={{ rotateX, rotateY, transformPerspective: 900 }}
-      className="group rounded-2xl bg-cream/80 p-5 shadow-md ring-1 ring-olive-dark/10"
-    >
-      <div className="relative aspect-square overflow-hidden rounded-xl bg-sand/50">
-        <Image
-          src={product.image}
-          alt={product.alt}
-          fill
-          sizes="(max-width: 768px) 90vw, 30vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-      </div>
-      <h3 className="mt-5 font-serif text-2xl text-ink">{product.name}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-ink/70">{product.description}</p>
-      <p className="mt-3 text-xs tracking-wide text-olive-dark">{product.material}</p>
-    </motion.div>
+    <Link href={`/products/${product.id}`}>
+      <motion.div
+        ref={ref}
+        onMouseMove={onMouseMove}
+        onMouseLeave={onMouseLeave}
+        style={{ rotateX, rotateY, transformPerspective: 900 }}
+        className="group rounded-2xl bg-cream/80 p-5 shadow-md ring-1 ring-olive-dark/10"
+      >
+        <div className="relative aspect-square overflow-hidden rounded-xl bg-sand/50">
+          <Image
+            src={product.image}
+            alt={product.alt}
+            fill
+            sizes="(max-width: 768px) 90vw, 30vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+        <h3 className="mt-5 font-serif text-2xl text-ink">{product.name}</h3>
+        <p className="mt-2 text-sm leading-relaxed text-ink/70">{product.description}</p>
+        <div className="mt-3 flex items-center justify-between">
+          <p className="text-xs tracking-wide text-olive-dark">{product.material}</p>
+          <p className="font-serif text-lg text-ink">₪{product.price}</p>
+        </div>
+      </motion.div>
+    </Link>
   );
 }

@@ -5,6 +5,8 @@ export type Product = {
   material: string;
   image: string;
   alt: string;
+  /** ILS, whole shekels. PLACEHOLDER — replace with real prices before going live. */
+  price: number;
 };
 
 export const products: Product[] = [
@@ -15,6 +17,7 @@ export const products: Product[] = [
     material: 'בד המפ · עבודת יד בנפאל',
     image: '/assets/crossbody.jpg',
     alt: 'תיק צד קטן מבד המפ בגוון קרם טבעי, נלבש צולב על ידי גבר על רקע מפרץ אילת וההרים, עם רצועה מתכווננת וסגירה בשרוך',
+    price: 149,
   },
   {
     id: 'wallet',
@@ -23,6 +26,7 @@ export const products: Product[] = [
     material: 'בד המפ · עבודת יד בנפאל',
     image: '/assets/wallet.jpg',
     alt: 'ארנק קומפקטי מבד המפ טבעי עם תאים לכרטיסים, שטרות ומטבעות, על רקע עץ בהיר',
+    price: 89,
   },
   {
     id: 'desert-edition',
@@ -31,5 +35,10 @@ export const products: Product[] = [
     material: 'בד המפ · עבודת יד בנפאל',
     image: '/assets/desert-edition.jpg',
     alt: 'תיק צד בגוון חול מדברי מבד המפ עם תווית "PEACE" ותליון עץ בצורת פטרייה, מונח על שטיח מקרמה על רקע דיונות חול בשעת שקיעה',
+    price: 169,
   },
 ];
+
+export function getProduct(id: string): Product | undefined {
+  return products.find((p) => p.id === id);
+}
