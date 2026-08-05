@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Logo from './Logo';
+import AnnouncementTicker from './AnnouncementTicker';
 
 const links = [
   { id: 'hemp', label: 'מה זה המפ' },
@@ -34,6 +35,7 @@ export default function Nav() {
         scrolled || menuOpen ? 'bg-cream/90 backdrop-blur-sm shadow-sm' : 'bg-transparent'
       }`}
     >
+      <AnnouncementTicker />
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="/#hero" onClick={() => setMenuOpen(false)}>
           <Logo variant="mark" />
@@ -51,7 +53,7 @@ export default function Nav() {
           onClick={() => setMenuOpen((v) => !v)}
           aria-label={menuOpen ? 'סגירת תפריט' : 'פתיחת תפריט'}
           aria-expanded={menuOpen}
-          className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 md:hidden"
+          className="relative z-[60] flex h-11 w-11 flex-col items-center justify-center gap-1.5 md:hidden"
         >
           <span
             className={`h-0.5 w-6 bg-ink transition-transform ${menuOpen ? 'translate-y-2 rotate-45' : ''}`}
@@ -63,21 +65,25 @@ export default function Nav() {
         </button>
       </div>
 
-      {menuOpen && (
-        <ul className="flex flex-col gap-1 bg-cream px-6 pb-6 text-center text-lg text-ink/80 md:hidden">
+      <div
+        className={`fixed inset-0 z-50 flex flex-col bg-cream transition-opacity duration-300 md:hidden ${
+          menuOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
+        }`}
+      >
+        <ul className="m-auto flex flex-col items-center gap-2 px-6">
           {links.map((link) => (
-            <li key={link.id}>
+            <li key={link.id} className="w-full max-w-xs border-b border-olive-dark/15 text-center">
               <a
                 href={`/#${link.id}`}
                 onClick={() => setMenuOpen(false)}
-                className="block rounded-lg py-3 transition-colors hover:bg-olive-dark/5 hover:text-olive-dark"
+                className="block py-4 font-serif text-3xl text-ink transition-colors hover:text-olive-dark"
               >
                 {link.label}
               </a>
             </li>
           ))}
         </ul>
-      )}
+      </div>
     </nav>
   );
 }

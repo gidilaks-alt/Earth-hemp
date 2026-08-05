@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Nav from '@/components/Nav';
+import Footer from '@/components/Footer';
 
 export default function OrderFailedPage() {
   return (
@@ -18,6 +19,7 @@ export default function OrderFailedPage() {
           חזרה לקטלוג
         </Link>
       </main>
+      <Footer />
     </>
   );
 }

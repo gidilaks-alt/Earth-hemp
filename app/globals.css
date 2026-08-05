@@ -28,3 +28,9 @@ body {
 .section-divider {
   background: linear-gradient(to bottom, transparent, rgba(112, 123, 79, 0.15), transparent);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import Nav from '@/components/Nav';
+import Footer from '@/components/Footer';
 import LiveProductDetail from '@/components/LiveProductDetail';
 import { products, getProduct } from '@/lib/products';
 
@@ -30,6 +31,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
         </Link>
         <LiveProductDetail initialProduct={product} />
       </main>
+      <Footer />
     </>
   );
 }

@@ -40,12 +40,15 @@ export default function LiveProductDetail({ initialProduct }: { initialProduct: 
         )}
       </div>
       <div>
-        <h1 className="font-serif text-4xl text-ink md:text-5xl">{product.name}</h1>
+        <p className="text-xs tracking-[0.3em] text-olive-dark">הקולקציה</p>
+        <h1 className="mt-2 font-serif text-4xl text-ink md:text-5xl">{product.name}</h1>
         <p className="mt-4 text-lg leading-relaxed text-ink/75">{product.description}</p>
         <p className="mt-3 text-sm tracking-wide text-olive-dark">{product.material}</p>
-        <p className="mt-8 font-serif text-3xl text-ink">₪{product.price}</p>
-        <div className="mt-8">
-          <BuyButton productId={product.id} />
+        <div className="mt-8 border-t border-olive-dark/15 pt-8">
+          <p className="font-serif text-3xl text-ink">₪{product.price}</p>
+          <div className="mt-6">
+            <BuyButton productId={product.id} />
+          </div>
         </div>
       </div>
     </div>

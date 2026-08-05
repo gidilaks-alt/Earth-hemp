@@ -15,20 +15,34 @@ export default function ContactSection() {
           </p>
         </Reveal3D>
         <Reveal3D delay={0.2}>
-          <form className="mx-auto mt-10 flex max-w-md flex-col gap-4 text-right">
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            className="mx-auto mt-10 flex max-w-md flex-col gap-4 text-right"
+          >
+            <input type="hidden" name="form-name" value="contact" />
+            <input type="text" name="bot-field" className="hidden" tabIndex={-1} autoComplete="off" />
             <input
               type="text"
+              name="name"
               placeholder="שם מלא"
+              required
               className="rounded-lg border border-cream/25 bg-cream/5 px-4 py-3 text-cream placeholder:text-cream/50 focus:border-clay focus:outline-none"
             />
             <input
               type="email"
+              name="email"
               placeholder="אימייל"
+              required
               className="rounded-lg border border-cream/25 bg-cream/5 px-4 py-3 text-cream placeholder:text-cream/50 focus:border-clay focus:outline-none"
             />
             <textarea
+              name="message"
               placeholder="הודעה"
               rows={4}
+              required
               className="rounded-lg border border-cream/25 bg-cream/5 px-4 py-3 text-cream placeholder:text-cream/50 focus:border-clay focus:outline-none"
             />
             <button
@@ -39,9 +53,6 @@ export default function ContactSection() {
             </button>
           </form>
         </Reveal3D>
-        <p className="mt-14 text-xs tracking-wide text-cream/50">
-          © {new Date().getFullYear()} EARTH &amp; HEMP — עבודת יד בנפאל
-        </p>
       </div>
     </section>
   );

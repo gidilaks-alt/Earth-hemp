@@ -9,7 +9,7 @@ export default function HeroSection() {
   return (
     <section id="hero" className="relative flex min-h-screen items-center overflow-hidden bg-cream">
       <Hero3D />
-      <div className="relative z-10 mx-auto max-w-6xl px-6 pt-24 text-center md:pt-0">
+      <div className="relative z-10 mx-auto max-w-6xl px-6 pt-32 text-center md:pt-0">
         <motion.p
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
